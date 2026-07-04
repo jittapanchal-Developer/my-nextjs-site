@@ -137,9 +137,9 @@ export default function HomeScreen() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Artisan coffee, gourmet plates, and now — an{' '}
-            <span className="text-amber-400 font-medium">augmented reality</span> menu
-            experience like no other.
+            Artisan coffee, gourmet plates, and handcrafted experiences —{' '}
+            <span className="text-amber-400 font-medium">every visit</span> a memory
+            worth savouring.
           </motion.p>
 
           <motion.div
@@ -215,7 +215,7 @@ export default function HomeScreen() {
               Brûlé Café was born from a simple idea: that a great cup of coffee and a beautiful plate of food can transform an ordinary moment into something memorable.
             </motion.p>
             <motion.p variants={fadeUp} className="text-white/60 leading-relaxed mb-8">
-              Our baristas source single-origin beans from sustainable farms, our chefs craft each plate with seasonal ingredients, and now we're bringing that experience into the future with augmented reality menus.
+              Our baristas source single-origin beans from sustainable farms, and our chefs craft each plate with the finest seasonal ingredients — delivering a dining experience that lingers long after the last bite.
             </motion.p>
             <motion.div variants={fadeUp} className="flex gap-10">
               {[['5★', 'Rating'], ['12K+', 'Happy Guests'], ['3', 'Locations']].map(([val, label]) => (
@@ -336,48 +336,95 @@ export default function HomeScreen() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
+      {/* ── What Makes Us Brûlé ── */}
       <section className="py-20 px-6">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-5xl mx-auto relative overflow-hidden rounded-3xl"
-        >
-          <div className="absolute inset-0">
-            <Image
-              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1400&q=80"
-              alt="Café ambience"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-          </div>
-          <div className="relative z-10 px-10 py-16 md:py-20 max-w-xl">
-            <p className="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-3">New Feature</p>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-14"
+          >
+            <p className="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-3">Our Craft</p>
             <h2
-              className="font-display text-4xl font-bold text-white mb-4 leading-tight"
+              className="font-display text-4xl md:text-5xl font-bold text-white"
               style={{ fontFamily: 'var(--font-playfair)' }}
             >
-              Experience our AR menu — coming soon.
+              Why Brûlé?{' '}
+              <span className="gradient-text italic">Because you deserve it.</span>
             </h2>
-            <p className="text-white/60 mb-8 leading-relaxed">
-              See your food in stunning 3D right at your table before you order. The future of dining is here at Brûlé.
-            </p>
+          </motion.div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: '-60px' }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {[
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                ),
+                title: 'Single-Origin Beans',
+                desc: 'Every cup starts with ethically sourced, freshly roasted beans from award-winning farms around the world.',
+              },
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                ),
+                title: 'Chef-Curated Plates',
+                desc: 'Our kitchen team creates dishes that balance bold flavour, seasonal freshness, and beautiful presentation.',
+              },
+              {
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                ),
+                title: 'Warm Hospitality',
+                desc: 'From the moment you walk in, our team is dedicated to making every visit feel like coming home.',
+              },
+            ].map(({ icon, title, desc }) => (
+              <motion.div
+                key={title}
+                variants={fadeUp}
+                className="glass rounded-3xl p-7 flex flex-col gap-4 hover:border-amber-500/20 transition-colors duration-300 group"
+              >
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/15 flex items-center justify-center group-hover:bg-amber-500/15 transition-colors duration-300">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} className="w-6 h-6 text-amber-400">
+                    {icon}
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-base mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+                    {title}
+                  </h3>
+                  <p className="text-white/45 text-sm leading-relaxed">{desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mt-12"
+          >
             <Link
               href="/menu"
               id="cta-menu-btn"
-              className="inline-flex items-center gap-2 bg-white text-black font-bold px-6 py-3.5 rounded-full hover:bg-amber-400 transition-colors duration-300"
+              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-bold px-8 py-4 rounded-full shadow-xl shadow-amber-600/25 hover:scale-105 hover:shadow-amber-500/40 transition-all duration-300 group"
             >
-              Browse the Menu
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
+              Explore the Full Menu
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4 group-hover:translate-x-1 transition-transform">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* ── Footer ── */}

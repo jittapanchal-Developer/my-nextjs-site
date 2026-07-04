@@ -141,7 +141,7 @@ export default function MenuScreen() {
               <span className="gradient-text italic">Menu</span>
             </h1>
             <p className="text-white/35 text-xs sm:text-sm leading-relaxed max-w-[280px] sm:max-w-xs mx-auto">
-              From street snacks to gourmet plates — tap any item to explore in AR.
+              From street snacks to gourmet plates — crafted fresh, served with love.
             </p>
           </motion.div>
 
